@@ -8,6 +8,11 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyGentt {
     }
+    interface UcSideDrawer {
+        "open": () => Promise<void>;
+        "opened": boolean;
+        "title": string;
+    }
 }
 declare global {
     interface HTMLMyGenttElement extends Components.MyGentt, HTMLStencilElement {
@@ -16,15 +21,27 @@ declare global {
         prototype: HTMLMyGenttElement;
         new (): HTMLMyGenttElement;
     };
+    interface HTMLUcSideDrawerElement extends Components.UcSideDrawer, HTMLStencilElement {
+    }
+    var HTMLUcSideDrawerElement: {
+        prototype: HTMLUcSideDrawerElement;
+        new (): HTMLUcSideDrawerElement;
+    };
     interface HTMLElementTagNameMap {
         "my-gentt": HTMLMyGenttElement;
+        "uc-side-drawer": HTMLUcSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
     interface MyGentt {
     }
+    interface UcSideDrawer {
+        "opened"?: boolean;
+        "title"?: string;
+    }
     interface IntrinsicElements {
         "my-gentt": MyGentt;
+        "uc-side-drawer": UcSideDrawer;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +49,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-gentt": LocalJSX.MyGentt & JSXBase.HTMLAttributes<HTMLMyGenttElement>;
+            "uc-side-drawer": LocalJSX.UcSideDrawer & JSXBase.HTMLAttributes<HTMLUcSideDrawerElement>;
         }
     }
 }

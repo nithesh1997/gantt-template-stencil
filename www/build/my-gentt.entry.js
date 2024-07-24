@@ -1,4 +1,4 @@
-import { r as registerInstance, h, g as getElement } from './index-9343b71f.js';
+import { r as registerInstance, h, g as getElement } from './index-b8a54f43.js';
 
 'use strict';
 
@@ -3831,7 +3831,7 @@ const MyGentt = class {
         }, 2000);
     }
     render() {
-        return (h("div", { key: '0a6385a825d6ec323ddc71dfa1e247f05f0561f8', style: { position: "relative" } }, this.isLoading && h("div", { key: '245ac24517a00bf444e83137f37ff2972cc18c6b', style: { position: "absolute", top: "0", left: "0", right: "0", bottom: "0", width: "100%", height: "100%", zIndex: "999" }, id: "skeleton_loader" }), h("div", { key: '3edebf5f36013a86e2c6e3a0e09165c3224ef7cd', id: "gantt_here", style: { width: '100%', height: '500px' } })));
+        return (h("div", { key: '5a28ee44ebe3fa7b2d657be855b110955e336b25', style: { position: "relative" } }, this.isLoading && h("div", { key: 'ab7b6d71044eec2f142f1fc8bac30029b0190e57', style: { position: "absolute", top: "0", left: "0", right: "0", bottom: "0", width: "100%", height: "100%", zIndex: "999" }, id: "skeleton_loader" }), h("div", { key: 'ab62c0dac8463556da7a512a1ec1f68f8673ae89', id: "gantt_here", style: { width: '100%', height: '500px' } })));
     }
     get el() { return getElement(this); }
 };
