@@ -1,16 +1,144 @@
 {
-    "chart": [
-        { "id": 1, "text": "Project #2", "start_date": "2024-07-01 00:00", "duration": 10, "progress": 0.4, "open": true },
-        { "id": 2, "text": "Task #1", "start_date": "2024-07-08 00:00", "duration": 8, "progress": 0.9, "parent": 1 },
-        { "id": 3, "text": "Task #2", "start_date": "2024-07-12 00:00", "duration": 8, "progress": 0.6, "parent": 1 },
-        { "id": 4, "text": "Project #3", "start_date": "2024-07-01 00:00", "duration": 10, "progress": 0.4, "open": true },
-        { "id": 5, "text": "Task #1", "start_date": "2024-07-08 00:00", "duration": 8, "progress": 0.9, "parent": 4 },
-        { "id": 6, "text": "Task #2", "start_date": "2024-07-12 00:00", "duration": 8, "progress": 0.6, "parent": 4 }
+  "chart": [
+    {
+      "id": "1",
+      "text": "Project #2",
+      "start_date": "2024-07-01 00:00",
+      "duration": 10,
+      "progress": 0.4,
+      "open": true
+    },
+    {
+      "id": "2",
+      "text": "Task #1",
+      "start_date": "2024-07-08 00:00",
+      "duration": 8,
+      "progress": 0.9,
+      "parent": 1
+    },
+    {
+      "id": "3",
+      "text": "Task #2",
+      "start_date": "2024-07-12 00:00",
+      "duration": 8,
+      "progress": 0.6,
+      "parent": 1
+    },
+    {
+      "id": "4",
+      "text": "Project #3",
+      "start_date": "2024-07-01 00:00",
+      "duration": 10,
+      "progress": 0.09714285714285714,
+      "open": true,
+      "end_date": "",
+      "$no_start": false,
+      "$no_end": false,
+      "$rendered_type": "task",
+      "$calculate_duration": true,
+      "$effective_calendar": "global",
+      "$source": [
+        "3"
       ],
-      "links":[
-        { "id": 1, "source": 1, "target": 2, "type": "1" },
-        { "id": 2, "source": 2, "target": 3, "type": "0" },
-        { "id": 3, "source": 4, "target": 5, "type": "0" },
-        { "id": 4, "source": 5, "target": 6, "type": "0" }
-      ]
+      "$target": [],
+      "parent": 0,
+      "$rendered_parent": 0,
+      "$level": 0,
+      "$local_index": 1,
+      "$open": true,
+      "$expanded_branch": true,
+      "$resourceAssignments": [],
+      "$index": 3
+    },
+    {
+      "id": "5",
+      "text": "Task #1",
+      "start_date": "2024-07-08 00:00",
+      "duration": 8,
+      "progress": 0.9,
+      "parent": 4
+    },
+    {
+      "id": "6",
+      "text": "Task #2",
+      "start_date": "2024-07-12 00:00",
+      "duration": 8,
+      "progress": 0.6,
+      "parent": 4
+    },
+    {
+      "id": "1721833343909",
+      "start_date": "2024-07-01 00:00",
+      "text": "Project #5",
+      "duration": 7,
+      "$resourceAssignments": [],
+      "end_date": "",
+      "progress": 0.32448979591836735,
+      "$no_start": false,
+      "$no_end": false,
+      "$rendered_type": "task",
+      "$calculate_duration": true,
+      "$effective_calendar": "global",
+      "$source": [],
+      "$target": [],
+      "parent": 0,
+      "$rendered_parent": 0,
+      "$level": 0,
+      "$expanded_branch": true,
+      "$index": 6,
+      "$local_index": 2,
+      "open": true,
+      "$open": true
+    },
+    {
+      "id": "1721833364819",
+      "start_date": "2024-07-03 00:00",
+      "text": "Task #3",
+      "duration": 6,
+      "parent": "1721833343909",
+      "$resourceAssignments": [],
+      "end_date": "",
+      "progress": 0.36904761904761907,
+      "$no_start": false,
+      "$no_end": false,
+      "$rendered_type": "task",
+      "$calculate_duration": true,
+      "$effective_calendar": "global",
+      "$source": [],
+      "$target": [],
+      "$rendered_parent": "1721833343909",
+      "$level": 1,
+      "$expanded_branch": true,
+      "$index": 7,
+      "$local_index": 0,
+      "open": true,
+      "$open": true
+    }
+  ],
+  "links": [
+    {
+      "id": "1",
+      "source": 1,
+      "target": 2,
+      "type": "1"
+    },
+    {
+      "id": "2",
+      "source": 2,
+      "target": 3,
+      "type": "0"
+    },
+    {
+      "id": "3",
+      "source": 4,
+      "target": 5,
+      "type": "0"
+    },
+    {
+      "id": "4",
+      "source": 5,
+      "target": 6,
+      "type": "0"
+    }
+  ]
 }
