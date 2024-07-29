@@ -48,8 +48,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@storybook/web-components": "^8.1.6",
     "axios": "^1.7.2",
     "concurrently": "^8.2.2",
-    "dhtmlx-gantt": "^8.0.9"
+    "dhtmlx-gantt": "^8.0.9",
+    "jsdom": "^24.1.0",
+    "lit-html": "^3.1.4"
   }
 }
