@@ -6,32 +6,67 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyGentt {
+    interface GanttControl {
+    }
+    interface MyGantt {
     }
 }
+export interface GanttControlCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGanttControlElement;
+}
 declare global {
-    interface HTMLMyGenttElement extends Components.MyGentt, HTMLStencilElement {
+    interface HTMLGanttControlElementEventMap {
+        "zoomIn": void;
+        "zoomOut": void;
+        "setZoomLevel": string;
+        "toggleCriticalPath": void;
     }
-    var HTMLMyGenttElement: {
-        prototype: HTMLMyGenttElement;
-        new (): HTMLMyGenttElement;
+    interface HTMLGanttControlElement extends Components.GanttControl, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLGanttControlElementEventMap>(type: K, listener: (this: HTMLGanttControlElement, ev: GanttControlCustomEvent<HTMLGanttControlElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLGanttControlElementEventMap>(type: K, listener: (this: HTMLGanttControlElement, ev: GanttControlCustomEvent<HTMLGanttControlElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLGanttControlElement: {
+        prototype: HTMLGanttControlElement;
+        new (): HTMLGanttControlElement;
+    };
+    interface HTMLMyGanttElement extends Components.MyGantt, HTMLStencilElement {
+    }
+    var HTMLMyGanttElement: {
+        prototype: HTMLMyGanttElement;
+        new (): HTMLMyGanttElement;
     };
     interface HTMLElementTagNameMap {
-        "my-gentt": HTMLMyGenttElement;
+        "gantt-control": HTMLGanttControlElement;
+        "my-gantt": HTMLMyGanttElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyGentt {
+    interface GanttControl {
+        "onSetZoomLevel"?: (event: GanttControlCustomEvent<string>) => void;
+        "onToggleCriticalPath"?: (event: GanttControlCustomEvent<void>) => void;
+        "onZoomIn"?: (event: GanttControlCustomEvent<void>) => void;
+        "onZoomOut"?: (event: GanttControlCustomEvent<void>) => void;
+    }
+    interface MyGantt {
     }
     interface IntrinsicElements {
-        "my-gentt": MyGentt;
+        "gantt-control": GanttControl;
+        "my-gantt": MyGantt;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-gentt": LocalJSX.MyGentt & JSXBase.HTMLAttributes<HTMLMyGenttElement>;
+            "gantt-control": LocalJSX.GanttControl & JSXBase.HTMLAttributes<HTMLGanttControlElement>;
+            "my-gantt": LocalJSX.MyGantt & JSXBase.HTMLAttributes<HTMLMyGanttElement>;
         }
     }
 }
